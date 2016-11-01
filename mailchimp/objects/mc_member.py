@@ -61,6 +61,8 @@ class MCMember(BaseObject):
         else:
             return_value['id'] = self.id
 
+        return return_value
+
     @classmethod
     def get_list_url(cls, list_id):
         """

@@ -308,6 +308,7 @@ class TestMCList(unittest.TestCase):
             self.assertEqual(2, len(lists))
             self.assertEqual(1, len(rsps.calls))
             self.assertEqual("https://us1.api.mailchimp.com/3.0/lists", rsps.calls[0].request.url)
+            self.assertEqual('GET', rsps.calls[0].request.method)
             self.assertEqual("application/json", rsps.calls[0].request.headers['Accept'])
             self.assertEqual("application/json", rsps.calls[0].request.headers['Content-Type'])
             self.assertEqual("Basic dXNlcm5hbWU6YTY1YTY1YTY1YTY1YTY1YTU2YTVhNi11czE=",
@@ -345,6 +346,7 @@ class TestMCList(unittest.TestCase):
             mc_list = MCList.get('57afe96172')
             self.assertEqual(1, len(rsps.calls))
             self.assertEqual("https://us1.api.mailchimp.com/3.0/lists/57afe96172", rsps.calls[0].request.url)
+            self.assertEqual('GET', rsps.calls[0].request.method)
             self.assertEqual("application/json", rsps.calls[0].request.headers['Accept'])
             self.assertEqual("application/json", rsps.calls[0].request.headers['Content-Type'])
             self.assertEqual("Basic dXNlcm5hbWU6YTY1YTY1YTY1YTY1YTY1YTU2YTVhNi11czE=",
