@@ -36,7 +36,7 @@ class MCList(BaseObject):
         self.visibility = json_data.get('visibility')
         self.modules = json_data.get('modules')
         self.stats = MCListStats(json_data.get('stats'))
-        self._links = [MCLink(link) for link in json_data.get('_links')]
+        self.links = [MCLink(link) for link in json_data.get('_links')] if json_data.get('_links') else []
 
     @classmethod
     def get(cls, list_id):
