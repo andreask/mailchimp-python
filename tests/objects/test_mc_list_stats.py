@@ -1,6 +1,6 @@
 # coding=utf-8
-from dateutil.tz import tzutc
 import datetime
+from dateutil.tz import tzutc
 import unittest
 from mailchimp.objects import MCListStats
 

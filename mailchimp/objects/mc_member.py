@@ -42,7 +42,7 @@ class MCMember(BaseObject):
         self.email_client = json_data.get('email_client')
         self.location = MCLocation(json_data.get('location'))
         self.list_id = json_data.get('list_id')
-        self._links = [MCLink(link) for link in json_data.get('_links')]
+        self.links = [MCLink(link) for link in json_data.get('_links')] if json_data.get('_links') else []
 
     def to_dict(self):
         return_value = {
