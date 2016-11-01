@@ -394,3 +394,20 @@ class TestMCList(unittest.TestCase):
         self.assertTrue(isinstance(mc_list.stats, MCListStats))
         self.assertEqual(203, mc_list.stats.member_count)
         self.assertTrue(isinstance(mc_list.campaign_defaults, MCCampaignDefaults))
+
+    def test_to_str(self):
+        mc_list = MCList(self.get_list_1())
+        self.assertEqual('57afe96172', str(mc_list))
+
+    def test_repr(self):
+        mc_list = MCList(self.get_list_1())
+        self.assertEqual('<MCList: 57afe96172>', str(repr(mc_list)))
+
+    def test_valid_search_params(self):
+        mc_list = MCList()
+        self.assertEqual(['offset', 'count', 'fields', 'exclude_fields', 'before_date_created','since_date_created'],
+                         mc_list.valid_search_params)
+
+    def test_item_url(self):
+        mc_list = MCList()
+        self.assertEqual("/lists", mc_list.item_url)

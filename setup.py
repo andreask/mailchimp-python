@@ -32,7 +32,7 @@ setup(
     ],
     keywords='mailchimp integration api',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-    install_requires=['requests'],
+    install_requires=['requests', 'python-dateutil'],
     test_suite="tests",
     tests_require=['responses']
 )
