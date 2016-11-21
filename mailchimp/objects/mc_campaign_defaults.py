@@ -17,3 +17,11 @@ class MCCampaignDefaults(BaseObject):
             self.from_email = json_data.get('from_email')
             self.subject = json_data.get('subject')
             self.language = json_data.get('language')
+
+    def to_dict(self):
+        return {
+            'from_name': self.from_name,
+            'from_email': self.from_email,
+            'subject': self.subject,
+            'language': self.language
+        }

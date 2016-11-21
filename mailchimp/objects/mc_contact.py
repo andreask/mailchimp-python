@@ -25,3 +25,15 @@ class MCContact(BaseObject):
             self.zip = json_data.get('zip')
             self.country = json_data.get('country')
             self.phone = json_data.get('phone')
+
+    def to_dict(self):
+        return {
+            'company': self.company,
+            'address1': self.address1,
+            'address2': self.address2,
+            'city': self.city,
+            'state': self.state,
+            'zip': self.zip,
+            'country': self.country,
+            'phone': self.phone
+        }

@@ -38,6 +38,20 @@ class MCList(BaseObject):
         self.stats = MCListStats(json_data.get('stats'))
         self.links = [MCLink(link) for link in json_data.get('_links')] if json_data.get('_links') else []
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'contact': self.contact.to_dict(),
+            'permission_reminder': self.permission_reminder,
+            'user_archive_bar': self.user_archive_bar,
+            'campaign_defaults': self.campaign_defaults.to_dict(),
+            'notify_on_subscribe': self.notify_on_subscribe,
+            'notify_on_unsubscribe': self.notify_on_unsubscribe,
+            'email_type_option': self.email_type_option,
+            'visibility': self.visibility
+        }
+
     @classmethod
     def get(cls, list_id):
         """
