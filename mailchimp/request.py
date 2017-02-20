@@ -72,6 +72,6 @@ class Request(object):
             response = requests.post("%s%s" % (cfg.get_server_url(), url), json=data,
                                      auth=HTTPBasicAuth('username', cfg.api_key), headers=Request.get_headers())
 
-        logging.debug(response.json())
+        print(response.json())
         response.raise_for_status()
         return response
