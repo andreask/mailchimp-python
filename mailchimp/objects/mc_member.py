@@ -1,5 +1,4 @@
 # coding=utf-8
-import hashlib
 import logging
 
 from mailchimp.exceptions import ObjectNotFound, MCListNotFound, MCMemberNotFound
@@ -149,9 +148,9 @@ class MCMember(BaseObject):
         hash_value = self.id
 
         if not self.id:
-            md = hashlib.md5()
-            md.update(self.email_address.lower().encode("utf-8"))
-            hash_value = md.hexdigest()
+            response = Request.post("%s" % MCMember.get_list_url(list_id), self.to_dict())
+            self._update(response.json())
+            return True
 
         try:
             if not list_id:
