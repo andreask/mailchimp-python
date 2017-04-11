@@ -147,15 +147,15 @@ class MCMember(BaseObject):
         """
         hash_value = self.id
 
+        if not list_id:
+            list_id = self.list_id
+
         if not self.id:
             response = Request.post("%s" % MCMember.get_list_url(list_id), self.to_dict())
             self._update(response.json())
             return True
 
         try:
-            if not list_id:
-                list_id = self.list_id
-
             response = Request.put("%s/%s" % (MCMember.get_list_url(list_id), hash_value),
                                    self.to_dict())
             self._update(response.json())
