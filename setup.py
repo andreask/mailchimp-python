@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='Mailchimp Python',
-    version='0.1.9',
+    version='0.1.10',
     description='A package used to integrate with Mailchimp via their public API (version 3)',
     long_description=long_description,
     url="https://github.com/andreask/mailchimp-python",
