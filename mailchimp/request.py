@@ -41,7 +41,8 @@ class Request(object):
             response = requests.get("%s%s" % (cfg.get_server_url(), url), params,
                                     auth=HTTPBasicAuth('username', cfg.api_key), headers=Request.get_headers())
 
-        logging.debug(response.json())
+        if response.content:
+            logging.debug(response.json())
         if response.status_code == 404:
             raise ObjectNotFound
         else:
@@ -57,8 +58,8 @@ class Request(object):
         else:
             response = requests.put("%s%s" % (cfg.get_server_url(), url), json=data,
                                     auth=HTTPBasicAuth('username', cfg.api_key), headers=Request.get_headers())
-
-        logging.debug(response.json())
+        if response.content:
+            logging.debug(response.json())
         response.raise_for_status()
         return response
 
@@ -71,7 +72,7 @@ class Request(object):
         else:
             response = requests.post("%s%s" % (cfg.get_server_url(), url), json=data,
                                      auth=HTTPBasicAuth('username', cfg.api_key), headers=Request.get_headers())
-
-        logging.debug(response.json())
+        if response.content:
+            logging.debug(response.json())
         response.raise_for_status()
         return response
