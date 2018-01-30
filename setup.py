@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='Mailchimp Python',
-    version='0.1.10',
+    version='0.1.11',
     description='A package used to integrate with Mailchimp via their public API (version 3)',
     long_description=long_description,
     url="https://github.com/andreask/mailchimp-python",
@@ -29,6 +29,7 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
     keywords='mailchimp integration api',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
