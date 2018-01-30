@@ -26,7 +26,7 @@ class Request(object):
         else:
             response = requests.delete("%s%s" % (cfg.get_server_url(), url),
                                        auth=HTTPBasicAuth('username', cfg.api_key), headers=Request.get_headers())
-        if response.status_code != 204:
+        if response.status_code != 204 and response.content:
             logging.debug(response.json())
         response.raise_for_status()
         return response
