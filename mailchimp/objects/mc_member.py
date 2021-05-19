@@ -1,4 +1,3 @@
-# coding=utf-8
 import logging
 
 from mailchimp.exceptions import ObjectNotFound, MCListNotFound, MCMemberNotFound
@@ -124,7 +123,7 @@ class MCMember(BaseObject):
         """
         Deletes the current member from the list
 
-        :return: True if sucessful
+        :return: True if successful
         """
         if not self.id:
             return False

@@ -1,6 +1,3 @@
-# coding=utf-8
-
-
 class Config:
     def __init__(self):
         self.api_key = None
@@ -19,5 +16,6 @@ class Config:
             dc = self.api_key.split('-')[1]
 
         return self.base_api_url.replace('https://api.', 'https://%s.api.' % dc)
+
 
 mailchimp_config = Config()
