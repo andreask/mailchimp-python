@@ -26,7 +26,7 @@ setup(
     keywords='mailchimp integration api',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=[
-        'requests==2.24.0',
+        'requests==2.31.0',
         'python-dateutil==2.8.1'
     ],
     test_suite="tests",
